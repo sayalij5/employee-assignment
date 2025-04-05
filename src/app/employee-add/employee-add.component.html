@@ -1,0 +1,93 @@
+<h3 class="bg-warning">{{title}} Employee</h3>
+<div class="container">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            <form [formGroup]="empForm">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-3">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput formControlName="name" />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email" />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Role</mat-label>
+                                    <mat-select matNativeControl formControlName="role">
+                                     <mat-option value="Angular Developer">Angular Developer</mat-option>
+                                     <mat-option value=".Net Developer">.Net Developer</mat-option>
+                                      <mat-option value="Flutter Developer">Flutter Developer</mat-option>
+                                      <mat-option value="Tester">Tester</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 datepicker-container">
+                                <input 
+                                class="date-input" 
+                                [value]="empForm.get('joiningDate')?.value| date:'MMM d, y'" 
+                                readonly 
+                                (click)="toggleCalendar()" 
+                                placeholder="Joining Date"
+                              />
+                            
+                              <div class="calendar-popup" *ngIf="calendarOpen">
+                                <input type="date" formControlName="joiningDate" (change)="calendarOpen = false" />
+                            
+                                <div class="quick-buttons">
+                                  <button (click)="setQuickDate('today','joiningDate')">Today</button>
+                                  <button (click)="setQuickDate('nextMonday','joiningDate')">Next Monday</button>
+                                  <button (click)="setQuickDate('nextTuesday','joiningDate')">Next Tuesday</button>
+                                  <button (click)="setQuickDate('afterWeek','joiningDate')">After 1 Week</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="datepicker-container">
+                                    <input 
+                                      class="date-input" 
+                                      [value]="empForm.get('endDate')?.value| date:'MMM d, y'" 
+                                      readonly 
+                                      (click)="toggleCalendar2()" 
+                                      placeholder="Select End Date"
+                                    />
+                                  
+                                    <div class="calendar-popup" *ngIf="calendarOpen2">
+                                      <input type="date" formControlName="endDate" (change)="calendarOpen2 = false" />
+                                  
+                                      <div class="quick-buttons">
+                                        <button (click)="setQuickDate('noDate','endDate')">No Date</button>
+                                        <button (click)="setQuickDate('today','endDate')">Today</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div>
+                               
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-2">
+                                <button mat-raised-button color="primary" (click)="submit()">Save</button>&nbsp;
+                                <button mat-raised-button color="primary" routerLink="">Back</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    
+
+</div>

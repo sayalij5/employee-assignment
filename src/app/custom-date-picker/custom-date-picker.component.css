@@ -1,0 +1,22 @@
+.quick-select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .quick-select button {
+    flex: 1 1 auto;
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .quick-select button:hover {
+    background-color: #e0e0e0;
+  }
+  

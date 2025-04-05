@@ -1,0 +1,53 @@
+.header{
+    background-color: rgb(80, 135, 236);
+    margin: 4px;
+    padding: 1px;
+    color: white;
+    font-size: 15px;
+}
+.datepicker-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .date-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .calendar-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  .quick-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .quick-buttons button {
+    flex: 1 1 45%;
+    padding: 8px;
+    border: none;
+    background: #1e88e5;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
