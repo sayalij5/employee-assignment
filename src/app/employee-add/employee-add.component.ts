@@ -112,6 +112,12 @@ export class EmployeeAddComponent {
       : this.empService.addEmployee(data);
 
     saveOrUpdate.subscribe();
+    if(data.id == null){
+      this.empForm.reset();
+    }
+    
+    let text = data.id ?  'Record Updated successfully!' : 'Record Saved successfully!'
+   alert(text);
   }
 
   setToday() {
