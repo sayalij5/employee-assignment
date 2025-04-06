@@ -51,3 +51,8 @@
     font-size: 14px;
     cursor: pointer;
   }
+  @media (max-width: 390px) {
+    .btn-space {
+      margin-top: 7px;
+    }
+  }
