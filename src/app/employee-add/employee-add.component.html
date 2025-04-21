@@ -4,21 +4,21 @@
         <mat-card-content>
             <form [formGroup]="empForm">
                 <div class="row">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
+                    <div class="col-12">
                         <div class="row">
-                            <div class="col-sm-4 col-md-3 col-xs-12">
+                            <div class="col-sm-4 col-md-3 col-xs-12 col-lg-4">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Name</mat-label>
                                     <input matInput formControlName="name" />
                                 </mat-form-field>
                             </div>
-                            <div class="col-sm-4 col-md-3 col-xs-12">
+                            <div class="col-sm-4 col-md-3 col-xs-12 col-lg-4">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Email</mat-label>
                                     <input matInput formControlName="email" />
                                 </mat-form-field>
                             </div>
-                            <div class="col-sm-4 col-md-3 col-xs-12">
+                            <div class="col-sm-4 col-md-3 col-xs-12 col-lg-4">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Role</mat-label>
                                     <mat-select matNativeControl formControlName="role">
@@ -51,7 +51,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-sm-4 col-md-3 col-xs-12 datepicker-container btn-space">
+                            <div class="col-sm-4 col-md-3 col-xs-12 col-lg-4 datepicker-container btn-space">
                                     <input 
                                       class="date-input" 
                                       [value]="empForm.get('endDate')?.value| date:'MMM d, y'" 
@@ -74,7 +74,7 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-sm-3 col-md-3 col-xs-12">
+                            <div class="col-sm-3 col-md-3 col-lg-4 col-xs-12">
                                 <button mat-raised-button color="primary" (click)="submit()">Save</button>&nbsp;
                                 <button mat-raised-button color="primary" routerLink="">Back</button>
                             </div>
