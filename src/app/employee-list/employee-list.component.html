@@ -1,77 +1,45 @@
-<h3 class="bg-warning">Employee List</h3>
-
-<!-- <div class="employee-list">
-    <div class="employee-card" *ngFor="let emp of employess">
-      <div class="info">
-        <h3>{{ emp.name }}</h3>
-        <p>{{ emp.role }}</p>
-        <p>{{ emp.joiningDate | date }}</p>
-      </div>
-      <div class="actions">
-        <button mat-icon-button (click)="update(emp.id)"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button (click)="delete(emp.id)"><mat-icon>delete</mat-icon></button>
-      </div>
-    </div>
-  </div> -->
-<br>
-  <div class="container">
+<h3 class="bg-warning text-center p-2">Employee List</h3>
+<div class="container my-3">
+  <div class="d-flex justify-content-end mb-3">
     <button mat-raised-button color="primary" class="add-btn" routerLink="employee-add">Add Employee</button>
-    <br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
-          <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
-          @if (column !='edit' && column !='delete') {
-            @if(column.toLowerCase().includes('date')){
-                <td mat-cell *matCellDef="let emp">
-                        <span> {{ emp[column] | date }}</span>
-                </td>
-            }@else {
-                <td mat-cell *matCellDef="let emp">{{ emp[column] }}</td>
-            }
-             
-          } @else {
-              @if (column =='edit') {
-                  <td mat-cell *matCellDef="let emp">
-                    @if (!emp.endDate) {
-                        <button mat-icon-button (click)="update(emp.id)"><mat-icon>edit</mat-icon></button>
-                    }
-                      
-                  </td>
-                  
-              } @else if(column =='delete'){
-                <td mat-cell *matCellDef="let emp">
-                  
-                    @if (!emp.endDate) {
-                      <button mat-icon-button (click)="delete(emp.id)"><mat-icon>delete</mat-icon></button>
-                    }
-                    </td>
-              }
-          }
-          
-        </ng-container>
-      
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
-      </table>
   </div>
 
-<!-- <div class="container">
-    <h2>Employee List</h2>
-    <div  *ngFor="let item of showData()">
-        <h3 class="header">{{item.title }}</h3>
-        <ul *ngFor="let data of item.value" style="list-style-type: none;">
-            <li><a routerLink="employee-edit"><b>{{ data.name }}</b></a> </li>
-            <li>{{ data.role }}</li>
-        </ul>
-       
-    </div>
-     <mat-card appearance="outlined" *ngFor="let item of showData()">
-        <mat-card-header>
-            <mat-card-title>{{ item.title }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content *ngFor="let data of item.value">
-            <h3><b>{{ data.name }}</b></h3>
-            <p>{{ data.role }}</p>
-        </mat-card-content>
-      </mat-card> 
-</div> -->
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
+      <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+
+        @if (column != 'edit' && column != 'delete') {
+          @if (column.toLowerCase().includes('date')) {
+            <td mat-cell *matCellDef="let emp">
+              <span>{{ emp[column] | date }}</span>
+            </td>
+          } @else {
+            <td mat-cell *matCellDef="let emp">{{ emp[column] }}</td>
+          }
+        } @else {
+          @if (column == 'edit') {
+            <td mat-cell *matCellDef="let emp">
+              @if (!emp.endDate) {
+                <button mat-icon-button (click)="update(emp.id)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              }
+            </td>
+          } @else if (column == 'delete') {
+            <td mat-cell *matCellDef="let emp">
+              @if (!emp.endDate) {
+                <button mat-icon-button (click)="delete(emp.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              }
+            </td>
+          }
+        }
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
