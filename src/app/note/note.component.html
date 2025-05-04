@@ -1,0 +1,17 @@
+<p>note works!</p>
+<button type="button" class="btn btn-primary" (click)="noteModal.show()">Add Note</button>
+
+<div bsModal #noteModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-child-name">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-child-name" class="modal-title pull-left">Add Note</h4>
+      </div>
+      <div class="modal-body">
+        <app-dynamic-form  [formControlList]="formList"></app-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-common-modal #commonModal [modalConfig]="modalConfigDto"></app-common-modal>

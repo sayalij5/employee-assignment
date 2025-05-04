@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../../employee.service';
 import { ActivatedRoute } from '@angular/router';
-import { CustomDatePickerComponent } from '../custom-date-picker/custom-date-picker.component';
+import { CustomDatePickerComponent } from '../../custom-date-picker/custom-date-picker.component';
 @Component({
   selector: 'app-employee-add',
   templateUrl: './employee-add.component.html',

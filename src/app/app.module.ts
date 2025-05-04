@@ -4,18 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material-module/material.module';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { CustomDatePickerComponent } from './custom-date-picker/custom-date-picker.component';
+import { LayoutModule } from './layout/layout.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipePipe } from './shared/filter-pipe.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent,EmployeeListComponent,EmployeeAddComponent, CustomDatePickerComponent
+    AppComponent, CustomDatePickerComponent, FilterPipePipe
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    LayoutModule,
+    MaterialModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

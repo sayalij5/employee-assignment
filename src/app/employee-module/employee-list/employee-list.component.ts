@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
+import { Employee } from '../../employee';
+import { EmployeeService } from '../../employee.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -35,7 +35,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   update(employeeId: number) {
-   this.route.navigate(['/employee-edit'],{queryParams: {id:employeeId}} );
+   this.route.navigate(['employee/employee-edit'],{queryParams: {id:employeeId}} );
   }
   
 }

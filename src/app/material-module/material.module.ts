@@ -32,7 +32,6 @@ objectStoresMeta : [{
   exports: [
     MatDatepickerModule,
     MatNativeDateModule,
-    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,

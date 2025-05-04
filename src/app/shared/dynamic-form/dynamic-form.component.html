@@ -1,0 +1,11 @@
+<form [formGroup]="dynamicForm">
+    <ng-container *ngFor="let item of formControlList">
+        <label>{{item.fieldLabel}} </label>
+        @if(item.fieldType == 'text'){
+            <input [id]="item.fieldLabel" [type]="item.fieldType" [value]="item.value" [formControlName]="item.controlName" />
+        }@else if(item.fieldType == 'textarea'){
+            <textarea [id]="item.fieldLabel" [value]="item.value"  [formControlName]="item.controlName"></textarea>
+        }
+    </ng-container>
+    
+  </form>

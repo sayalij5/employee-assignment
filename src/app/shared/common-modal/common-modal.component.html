@@ -1,0 +1,22 @@
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-child-name">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-child-name" class="modal-title pull-left">{{modalConfig.modalTitle}}</h4>
+        <button type="button" class="close pull-right btn-close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        @if(modalConfig.modalType == 'Confirmational'){
+            <button type="button" class="btn btn-primary" (click)="confirm('yes')" >Yes</button>&nbsp;
+            <button type="button" class="btn btn-primary" (click)="confirm('no')" >No</button>
+        }@else if(modalConfig.modalType == 'Informational'){
+            <button type="button" class="btn btn-primary" (click)="hideChildModal()" >OK</button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
